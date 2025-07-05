@@ -27,9 +27,12 @@ It just simply checks for remainder when year was divided by four.
   2016 is a Leap Year
 ```
 
+----
+
+## 📃License
+
+  See included [LICENSE](./LICENSE) file for more details.
+
 ------
 
 ## Author: Silven Mohan
-
-
------
