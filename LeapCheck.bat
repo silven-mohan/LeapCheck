@@ -1,7 +1,7 @@
 :: LeapCheck
 
 @echo off
-
+setlocal enabledelayedexpansion
 
 :menu
 echo ----- LeapCheck -----
@@ -41,10 +41,20 @@ cls
 
 :leapcheck
 set /a lc=year%%4
-if "%lc%"=="0" (
-	echo %year% is a Leap year.
+set /a lc1=year%%100
+set /a lc2=year%%400
+if %lc%==0 (
+    if %lc1%==0 (
+        if %lc2%==0 (
+            echo %year% is a Leap year.
+        ) else (
+            echo %year% is not a Leap year.
+        )
+    ) else (
+        echo %year% is a Leap year.
+    )
 ) else (
-	echo %year% is not a Leap year.
+    echo %year% is not a Leap year.
 )
 pause
 goto menu
